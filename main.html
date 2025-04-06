@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Increment Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #incrementBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #counter {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <p id="counter">0</p>
+  <button id="incrementBtn">Increment Counter</button>
+
+  <script>
+    // Get references to the elements
+    const counterElement = document.getElementById('counter');
+    const incrementBtn = document.getElementById('incrementBtn');
+
+    // Add click event listener to the button
+    incrementBtn.addEventListener('click', () => {
+      // Get current value before incrementing
+      const currentValue = parseInt(counterElement.textContent);
+      
+      // Show alert with current (un-incremented) value
+      alert(`Current counter value: ${currentValue}`);
+
+      // Increment and update the counter
+      counterElement.textContent = currentValue + 1;
+    });
+  </script>
 
 </body>
-
 </html>
