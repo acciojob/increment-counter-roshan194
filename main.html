@@ -27,19 +27,16 @@
   <button id="incrementBtn">Increment Counter</button>
 
   <script>
-    // Get references to the elements
     const counterElement = document.getElementById('counter');
     const incrementBtn = document.getElementById('incrementBtn');
 
-    // Add click event listener to the button
     incrementBtn.addEventListener('click', () => {
-      // Get current value before incrementing
       const currentValue = parseInt(counterElement.textContent);
       
-      // Show alert with current (un-incremented) value
-      alert(`Current counter value: ${currentValue}`);
+      // Show alert with only the numeric value (for Cypress test)
+      alert(currentValue);
 
-      // Increment and update the counter
+      // Increment and update counter
       counterElement.textContent = currentValue + 1;
     });
   </script>
